@@ -80,7 +80,7 @@ body {
 /* Button */
 .btn {
     background-color: rgb(220, 248, 255);
-    margin: 0 auto;
+    margin: 0 auto 20px;
     text-align: center;
     width: 120px;
     padding: 10px;
@@ -92,11 +92,13 @@ body {
     .row {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .col {
-        flex: 1 45%;
+        /* flex: 1 45%; */
+        margin: 0 0 2%;
+        width: 49%;
     }
 }
 
@@ -117,6 +119,6 @@ body {
 
 @media(min-width:1200px) {
     .row {
-        max-width: 1200px;
+        width: 1200px;
     }
 }
