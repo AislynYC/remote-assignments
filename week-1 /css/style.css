@@ -26,6 +26,7 @@ body {
 .menu-btn {
     position: absolute;
     right: 3em;
+    cursor: pointer;
 }
 
 /* Nav */
@@ -34,14 +35,31 @@ body {
     display: none;
 }
 
-#mobile-nav {
-    display: none;
-}
-
 .nav-item a {
     display: block;
     text-align: center;
     padding: 20px 60px 20px 0;
+}
+
+#nav-card {
+    display: none;
+    position: fixed;
+    background-color: white;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.mobile-nav-item {
+    padding: 18px 10px;
+}
+
+#menu-close-btn {
+    width: 2em;
+    float: right;
+    margin: 5px;
+    cursor: pointer;
 }
 
 /* Banner */
@@ -94,7 +112,6 @@ body {
 /* Media Queries */
 
 @media(min-width:500px) {
-
     .row {
         display: flex;
         flex-wrap: wrap;
@@ -109,7 +126,7 @@ body {
 }
 
 @media(min-width:800px) {
-    #mobile-nav {
+    #nav-card {
         display: none;
     }
 
