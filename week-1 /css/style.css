@@ -100,6 +100,10 @@ body {
     margin-top: 0;
 }
 
+#additional-row {
+    display: none;
+}
+
 /* Button */
 .btn {
     background-color: rgb(220, 248, 255);
@@ -107,6 +111,7 @@ body {
     text-align: center;
     width: 120px;
     padding: 10px;
+    cursor: pointer;
 }
 
 /* Media Queries */

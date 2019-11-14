@@ -24,3 +24,17 @@ function closeMenuCard() {
 }
 menuBtn.addEventListener('click', openMenuCard);
 menuCloseBtn.addEventListener('click', closeMenuCard);
+
+//Request 3: Click to Show More Content Boxes.
+var actionBtn = document.getElementById('action-btn');
+var addRow = document.getElementById('additional-row');
+
+function showAdditionalRow() {
+    if (window.matchMedia("(min-width:500px)").matches) {
+        addRow.style.display = 'flex';
+    } else {
+        addRow.style.display = 'block';
+    }
+}
+
+actionBtn.addEventListener('click', showAdditionalRow);
