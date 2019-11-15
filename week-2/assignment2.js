@@ -11,7 +11,7 @@ function calculate(args) {
 }
 // Try to call calculate function correctly 
 
-// My first way
+// The first way
 const obj = {
     op: "+",
     n1: 6,
@@ -20,7 +20,7 @@ const obj = {
 console.log(calculate(obj));
 
 
-// My second way
+// The second way
 
 class Obj {
     constructor(op, n1, n2) {
@@ -32,5 +32,5 @@ class Obj {
 const obj2 = new Obj('-', 6, 4)
 console.log(calculate(obj2));
 
-//?????
+// The third way
 console.log(calculate(Object.create(obj)));
