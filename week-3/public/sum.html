@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <h1>Sum of 1 to N Calculator</h1>
-    <p>Type a number as N below and get sum of 1 to N result!</p>
+    <h1>Sum of (1 to N) Calculator</h1>
+    <p>Type a number as N below and get sum of (1 to N) result!</p>
     <label for="num">N = </label>
     <input type="text" id="num">
     <button id="btn" onclick="sendAjax()">get result</button>
@@ -18,17 +18,39 @@
     <div id="ajax">
         <!-- display result -->
     </div>
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- ==============jQuery Import================ -->
+    <!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+
     <script>
         function sendAjax() {
-            const nValue = $("#num").val();
+            const xhr = new XMLHttpRequest();
+            const nValue = document.getElementById('num').value;
             const url = "/getData?number=" + nValue;
 
-            $.get(url, function (res) {
-                $("#ajax").html(res);
-            });
-        }
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        document.getElementById('ajax').innerHTML = xhr.responseText;
+                    } else {
+                        alert('[' + xhr.status + '] ' + xhr.statusText);
+                    }
+                }
+            };
+            xhr.open('GET', url);
+            xhr.send();
+        };
+
+        //==============jQuery================
+        // function sendAjax() {
+        //     const nValue = $("#num").val();
+        //     const url = "/getData?number=" + nValue;
+
+        //     $.get(url, function (res) {
+        //         $("#ajax").html(res);
+        //     });
+        // }
     </script>
 </body>
 
